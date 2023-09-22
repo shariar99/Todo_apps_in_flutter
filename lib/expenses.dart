@@ -22,7 +22,7 @@ class _ExpensesState extends State<Expenses> {
     ),
     Expense(
       title: 'Cinema',
-      amount: 19.99,
+      amount: 29.99,
       date: DateTime.now(),
       category: Category.leisure,
     ),
@@ -47,7 +47,7 @@ class _ExpensesState extends State<Expenses> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Expense tracker'),
+        title: const Text('Flutter ExpenseTracker'),
         actions: [
           IconButton(
             onPressed: _openAddExpenseOverlay,
