@@ -26,7 +26,6 @@ class _ExpensesState extends State<Expenses> {
       date: DateTime.now(),
       category: Category.leisure,
     ),
-
   ];
 
   void _openAddExpenseOverlay() {
@@ -40,6 +39,12 @@ class _ExpensesState extends State<Expenses> {
   void _addExpense(Expense expense) {
     setState(() {
       _regesterdExpenses.add(expense);
+    });
+  }
+
+  void _removeExpense(Expense expense) {
+    setState(() {
+      _regesterdExpenses.remove(expense);
     });
   }
 
@@ -61,6 +66,7 @@ class _ExpensesState extends State<Expenses> {
           Expanded(
             child: ExpensesList(
               expenses: _regesterdExpenses,
+              onRemoveExpense: _removeExpense,
             ),
           )
         ],
