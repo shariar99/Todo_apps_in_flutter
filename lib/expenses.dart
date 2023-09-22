@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/widgets/expenses_list.dart';
 import 'package:todo/models/expense.dart';
 
 class Expenses extends StatefulWidget {
@@ -16,7 +17,7 @@ class _ExpensesState extends State<Expenses> {
       title: 'Flutter course',
       amount: 19.99,
       date: DateTime.now(),
-      category: Category.food,
+      category: Category.work,
     ),
     Expense(
       title: 'Cinema',
@@ -29,10 +30,22 @@ class _ExpensesState extends State<Expenses> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.add),
+          ),
+        ],
+      ),
       body: Column(
-        children: const [
-          Text('The chart'),
-          Text('Expense list...'),
+        children: [
+          const Text('The chart'),
+          Expanded(
+            child: ExpensesList(
+              expenses: _regesterdExpenses,
+            ),
+          )
         ],
       ),
     );
