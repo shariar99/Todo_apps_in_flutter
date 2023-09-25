@@ -26,3 +26,4 @@ class ExpensesList extends StatelessWidget {
     );
   }
 }
+
